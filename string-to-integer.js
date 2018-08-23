@@ -18,9 +18,11 @@ var myAtoi = function(str) {
         arr.push(str.charAt(len1 - len));
       }
       len--;
-    } 
-    console.log(arr);
+    }
     let n = parseInt(arr.join(''));
+    if (isNaN(n)) {
+      return 0;
+    }
     if (n > Math.pow(2, 31) - 1) {
       return Math.pow(2, 31) - 1;
     }
@@ -29,3 +31,5 @@ var myAtoi = function(str) {
     }
     return n;
 };
+
+console.log(myAtoi(''));
